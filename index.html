@@ -1,0 +1,672 @@
+<?php
+	$css = "css/style.css?" . filemtime("css/style.css");
+	$js = "js/custom.js?" . filemtime("js/custom.js");
+	$investStyleData = "js/investStyleData.js?" . filemtime("js/investStyleData.js");
+?>
+<!doctype html>
+<html>
+	<head>
+	<title>당신의 동학개미유형은? [2030 자낳세 보고서]</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="keywords" content="경향신문, 인터랙티브, 스토리텔링, storytelling, 창간기획, 자본주의, 밀레니얼, 재테크, 2030재테크, 자낳세">
+    <meta name="description" content="20대, 30대 1000명을 대상으로 설문조사를 실시한 이들의 투자 유형을 분류하고 그들의 생각을 알아봤습니다. 혹시 나의 투자유형은 무엇인지 궁금하지 않으신가요?">
+
+    <!-- SNS 공유 태그-->
+    <meta property="og:url" content="http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="당신의 동학개미유형은? [2030 자낳세 보고서]" />
+    <meta property="og:description" content="7가지 투자 유형과 유형별 투자 인식, 금융 현황을 알려드립니다. MZ투자자들은 어떤 생각으로, 소득의 얼마를 투자하고 있을까요?" />
+    <meta property="og:image" content="http://img.khan.co.kr/spko/storytelling/2020/2030-invest-report/fb_thumb_ant.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/">
+    <meta name="twitter:creator" content="@kyunghyang">
+    <meta name="twitter:title" content="당신의 동학개미유형은? [2030 자낳세 보고서]">
+    <meta name="twitter:description" content="7가지 투자 유형과 유형별 투자 인식, 금융 현황을 알려드립니다. MZ투자자들은 어떤 생각으로, 소득의 얼마를 투자하고 있을까요?">
+    <meta name="twitter:image" content="http://img.khan.co.kr/spko/storytelling/2020/2030-invest-report/fb_thumb_ant.jpg">
+
+    <!-- 스타일시트 태그-->
+	<link rel="stylesheet" type="text/css" href="https://img.khan.co.kr/spko/storytelling/recothumb/digiReco.css" />
+ 	<link rel="stylesheet" type="text/css" href="<?php echo $css; ?>" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+    <!-- 스크립트 태그-->
+	<!--library-->
+	<script type="text/javascript" src="https://www.khan.co.kr/spko/js/plugin/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+	<!--library-->
+
+	<!--analystics-->
+	<script type="text/javascript" src="https://news.khan.co.kr/kh_storytelling/digiReco.js"></script>
+	<script type="text/javascript" src="https://www.khan.co.kr/spko/js/khan_analystics.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79840639-2"></script>
+	<script src="https://unpkg.com/three@0.118.3/build/three.js"></script>
+	<!--analystics-->
+
+	<!-- Google Tag Manager -->
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5Q32MWB');
+	</script>
+	<!--// End Google Tag Manager -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-79840639-2');
+	</script>
+	<!--// End Global site tag (gtag.js) - Google Analytics -->
+
+
+ </head>
+<body>
+
+	<!-- 메타 태그-->
+    <!--[if IE 8]>
+	<div class="ie-block ie-block-8">
+		<div class="alert-msg">
+			<p>불편을 드려 죄송합니다.<br/>현재 이 버전의 인터넷 익스플로어(IE)에서는 페이지가 작동하지 않습니다.</p>
+			<p>보다 정상적인 이용을 위해서는 다른 브라우저를 이용해주십시오.</p>
+			<a href="http://www.khan.co.kr/"><button>경향신문 메인으로 돌아가기</button></a>
+			<a href="http://windows.microsoft.com/ko-kr/internet-explorer/download-ie" target="_blank"><button>IE 업데이트 하러 가기</button></a>
+		</div>
+	</div>
+    <![endif]-->
+	
+	<!-- 메타 태그-->
+    <!--[if IE 9]>
+	<div class="ie-block ie-block-9">
+		<div class="alert-msg">
+			<p>불편을 드려 죄송합니다.<br/>현재 이 버전의 인터넷 익스플로어(IE)에서는 페이지의 일부 기능이 작동하지 않을 수 있습니다.</p>
+			<p>보다 정상적인 이용을 위해서는 다른 브라우저를 이용해주십시오.</p>
+			<button class="close-ie-block">경고창 닫기</button>
+			<a href="http://www.khan.co.kr/"><button>경향신문 메인으로 돌아가기</button></a>
+			<a href="http://windows.microsoft.com/ko-kr/internet-explorer/download-ie" target="_blank"><button>IE 업데이트 하러 가기</button></a>
+		</div>
+	</div>
+    <![endif]-->
+
+	<!-- 전체 wrap (S)-->
+	<div class="wrap">
+
+		<!-- Loading page (S)-->
+		<div class="loading-page">
+			<div class="loading-gif">
+				<div class="loading-spinner-box">
+					<div class="spinner">
+						  <div class="bounce1"></div>
+						  <div class="bounce2"></div>
+						  <div class="bounce3"></div>
+					</div>
+					<p class="loading-ment">로딩중입니다...</p>
+				</div>
+
+			</div>
+		</div>
+		<!--// Loading page (E)-->
+		<!--After Loading (S)-->
+		<div class="after-load">
+			<!-- Header(S) -->
+			<!--
+			<div class="header">
+				<div class="headerWrap">
+					<div class="header_container">
+						<div class="khan_btn">
+							<a href="http://www.khan.co.kr/" target="_blank"><img src="http://img.khan.co.kr/spko/storytelling/2019/genx/kh_logo.png" alt="홈으로" /></a>
+						</div>
+						<div class="share_bx">							
+							<span><em class="user-count"></em><a onclick="sendSns('facebook'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2016/anniversary/fb_icon.png" alt="페이스북" /></a></span>
+							<span><a onclick="sendSns('twitter'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2019/genx/tw_icon.png" alt="트위터" /></a></span>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- //Header (E)-->
+			<!-- 공통 Header (S)-->
+			<div id="header" class="common_header">
+				<!-- 탑영역 -->
+				<div class="top_area_holder">				
+					<div class="top_area">
+						<dl class="family_site">
+							<dd>
+								<a href="http://sports.khan.co.kr" target="_blank" title="스포츠경향">스포츠경향</a>
+								<span>I</span>
+								<a href="http://weekly.khan.co.kr" target="_blank" title="주간경향">주간경향</a>
+								<span>I</span>
+								<a href="http://lady.khan.co.kr" target="_blank" title="레이디경향">레이디경향</a>
+								<span>I</span>
+								<a href="http://english.khan.co.kr/" target="_blank" title="ENGLISH" class="eng">ENGLISH</a>
+							</dd>
+						</dl>
+						<dl class="membership">
+							<dd id="log_out" style="display:none">							
+								<a class="log" href="javascript:;" onclick="logout();" title="로그아웃">로그아웃</a>
+								<span>I</span>
+								<a href="https://member.khan.co.kr/login/modify.html" title="정보변경">정보변경</a>
+								<span>I</span>
+								<a href="http://epaper.khan.co.kr/">지면보기</a>
+								<span>I</span>
+								<a href="http://smile.khan.co.kr/gudoc/gudoc_input_step3.html?media_cd=201" target="_blank">구독신청</a>
+							</dd>
+
+							<script type="text/javascript">
+							function logout()
+							{
+								window.location.href="https://member.khan.co.kr/login/logout.html?url="+ encodeURIComponent(location.href);
+							}
+							</script>
+
+							<dd id="log_in">
+								<a class="log" href="https://member.khan.co.kr/login/login.html?url=http%3A%2F%2Fnews.khan.co.kr%2Fkh_storytelling%2F2019%2Fapart%2F" title="로그인">로그인</a>
+								<span>I</span>
+								<a href="https://member.khan.co.kr/login/general.html?url=http%3A%2F%2Fnews.khan.co.kr%2Fkh_storytelling%2F2019%2Fapart%2F">회원가입</a>
+								<span>I</span>
+								<a href="http://epaper.khan.co.kr/">지면보기</a>
+								<span>I</span>
+								<a href="http://smile.khan.co.kr/gudoc/gudoc_input_step3.html?media_cd=201" target="_blank">구독신청</a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<script>
+					if (document.cookie.match(/khan_uid/i) || document.cookie.match(/khan_id/i))
+					{
+						jQuery("#log_in").hide();
+						jQuery("#log_out").show();
+					}else
+					{
+						jQuery("#log_in").show();
+						jQuery("#log_out").hide();
+					}
+				</script>
+				<!-- // 탑영역 -->
+				<div class="logo_area">
+					<div class="sec_title">
+						<a href="//news.khan.co.kr/kh_interactive/index.html">인터랙티브</a>
+					</div>
+					<div class="sub_logo">
+						<h2>
+							<a href="javascript:" onclick="javascript:main_go_click();" title="경향닷컴 홈으로 이동">경향신문</a>
+						</h2>
+					</div>
+					<div class="sns_wrap">
+						<div class="social">
+							<ul>
+								<li class="facebook"><a href="http://facebook.com/kyunghyangshinmun" title="경향신문 페이스북" target="_blank">	페이스북</a></li>
+								<li class="twitter"><a href="http://twitter.com/kyunghyang" title="경향신문 트위터" target="_blank">트위터</a></li>
+								<li class="instagram"><a href="https://www.instagram.com/kyunghyangshinmun/" title="경향신문 인스타그램" target="_blank">인스타그램</a></li>
+								<li class="youtube"><a href="https://www.youtube.com/thekyunghyangtv" title="경향신문 유튜브" target="_blank">유튜브</a></li>
+							</ul>
+							<span class="bar"></span>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<!-- 공통 Header (E)-->
+
+			<header id="header-m" class="head_article">
+				<div class="wrap_art_top_header">
+					<div class="wrap_tit common-header-title">
+						<h2 class="tit_svc">
+							<span class="screen_out">경향신문</span>
+						</h2>
+					</div>
+					<div class="wrap_util">
+						<div class="box_menu_left">
+							<a href="http://m.khan.co.kr/" class="btn_gohome">
+								<span class="ico_gohome">홈으로 바로가기</span>
+							</a>
+						</div>
+						<div class="box_menu_right">
+							<div class="share_bx">
+								<div class="share_fb"><a onclick="sendSns('facebook'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2019/factory/fb_icon_line.png" alt="페이스북" /></a></div>
+								<div class="share_tw"><a onclick="sendSns('twitter'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2019/factory/tw_icon_line.png" alt="트위터" /></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="art_header">
+				<!-- 꼭지명 -->
+				<div class="header_tit_serial" style="font-size: 13px;"><a href="//news.khan.co.kr/kh_interactive/index.html">인터랙티브</a></div>
+				<!-- 꼭지명 -->
+				<h3 class="tit_view" style="font-size: 24px;">당신의 동학개미유형은?</h3> 
+			</div>
+			<!-- Container (S)-->
+			<div class="container">
+				
+				<div class="story-header">
+					
+					<div class="story-top-graphic">
+						<!--
+						<div class="graphic-holder">
+							<div class="graphic-back"><img src="img/intro-graphic-bg.jpg" alt=""></div>
+							<div class="float-el-holder">
+								<div class="line aniOb"><img src="img/intro-line.png" alt=""></div>
+								<div class="money money--3 aniOb"><img src="img/intro-money-3.png" alt=""></div>
+								<div class="money money--4 aniOb"><img src="img/intro-money-4.png" alt=""></div>
+								<div class="building aniOb"><img src="img/intro-building.png" alt=""></div>
+								<div class="person aniOb"><img src="img/intro-person.png" alt=""></div>
+								<div class="chart aniOb"><img src="img/intro-chart.png" alt=""></div>
+								<div class="coin aniOb"><img src="img/intro-coin.png" alt=""></div>
+								<div class="money money--1 aniOb"><img src="img/intro-money-1.png" alt=""></div>
+								<div class="money money--2 aniOb"><img src="img/intro-money-2.png" alt=""></div>
+							
+							</div>
+						</div>-->
+						<div class="graphic-holder">
+							<div class="graphic-back"></div>
+							<div class="float-el-holder">
+								<div class="ant ant--01 aniOb"><img src="img/top-ant-01.png" alt="동학개미"></div>
+								<div class="ant ant--02 aniOb"><img src="img/top-ant-02.png" alt="동학개미"></div>
+								<div class="ant ant--03 aniOb"><img src="img/top-ant-03.png" alt="동학개미"></div>
+								<div class="ant ant--04 aniOb"><img src="img/top-ant-04.png" alt="동학개미"></div>
+								<div class="ant ant--05 aniOb"><img src="img/top-ant-05.png" alt="동학개미"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="story-header-text">
+						<div class="title-holder">
+							<h1>2030 자낳세보고서, 당신의 동학개미유형은?</h1>
+							<img src="img/project-title.png" class="sub-title" alt="2030 자낳세보고서">
+							<img src="img/page-title-black.png" class="main-title" alt="당신의 동학개미유형은?">
+						</div>
+						
+						<div class="strong-des">
+							<p>7가지 투자 유형과 유형별 투자 인식, 금융 현황을 알려드립니다.</p>
+							<p>MZ세대 투자자들은 어떤 생각으로, 소득의 얼마를 투자하고 있을까요?</p>
+						</div>
+					</div>
+						
+					<div class="story-header-con-2">
+						<div class="top-byline">
+							<div class="top-border">
+								<p><strong>기획·제작</strong>
+								<a href="http://news.khan.co.kr/reporter_article.html?id=291" target="_blank">최미랑</a> · 
+								<a href="http://news.khan.co.kr/reporter_article.html?id=296" target="_blank">박광연</a> ·
+								<a href="http://news.khan.co.kr/reporter_article.html?id=302" target="_blank">김유진</a> ·
+								<a href="http://news.khan.co.kr/reporter_article.html?id=357" target="_blank">심윤지</a> 기자</p>
+							</div>									
+						</div>
+
+						<div class="pc-share">
+							<div class="share_bx">
+								<div class="share_fb"><a onclick="sendSns('facebook'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2019/factory/fb_icon_line.png" alt="페이스북" /></a></div>
+								<div class="share_tw"><a onclick="sendSns('twitter'); return false;"><img src="http://img.khan.co.kr/spko/storytelling/2019/factory/tw_icon_line.png" alt="트위터" /></a></div>
+							</div>
+						</div>
+					</div>
+			
+				</div>
+
+
+				<div class="story-body">
+					<div class="story-intro">
+						<div class="para-holder">
+							<p>청년들이 ‘돈 얘기’를 하기 시작했습니다. 대학생부터 사회 초년생까지, 근래 한국 증시에 불어온 투자 열풍에는 2030이 핵심축으로 자리 잡고 있습니다. 2030세대가 올해 상반기 신규 계좌 개설에서 차지하는 비중은 52%, 절반에 달했습니다.</p>
+							<p>청년 투자자들에 대해 자세히 알아보고자 전국의 20~34세 남녀 1000명을 대상으로 ‘돈과 투자에 대한 인식조사’를 진행했습니다. 조사결과를 바탕으로 청년 투자자들의 투자 유형을 분류하고 투자유형에 따른 금융현황도 정리해봤습니다.</p>
+							<p>혹시 나의 투자 유형이 무엇일지 궁금하지 않으세요? 나랑 비슷한 투자자들은 얼마를, 어떻게 투자하고 있을까요?</p>
+						</div>
+					</div>
+
+
+					<div class="section-list">
+						<div class="each-sec sec--01" id="INVEST_STYLE_TESt">
+							
+							<div class="test--intro">
+								<div class="test--intro-box">
+									<div class="tail"><img src="img/green-tail-2.png" alt=""></div>
+									<p>테스트에 참여하시면 투자 유형과<br/>유형별 설문 결과 리포트를 보여드릴게요!</p>
+									<div class="alert-icon"><img src="img/alert-test-icon.png" alt="여기서 잠깐!"></div>
+								</div>
+
+								<div class="btn-holder" id="BT_STEP_01">
+									<a href="testnResultPage.html">
+										<div class="button btn-green" id="GO_TEST_BTN">
+											<p>투자유형 테스트 바로가기<span class="icon"><img src="http://img.khan.co.kr/spko/storytelling/2020/minor/go-icon.png" alt=""></span></p>
+										</div>
+									</a>
+			
+									<div class="button btn-gray btn-second" id="SKIP_TEST_BTN"><p>테스트는 넘어갈래요</p></div>
+								</div>
+
+							</div>
+					
+						
+						</div>
+					
+
+						<div class="each-sec sec--03" id="MILL_COGNI_RESULT">
+							<div class="top-feature">
+								<img src="img/main-graphic-2.jpg" alt="">
+							</div>
+							<h2>밀레니얼 세대가 노동과 재테크, 부동산을 바라보는 시각</h2>
+							<img src="img/sec-03-title.png" alt="밀레니얼 세대가 노동과 재테크, 부동산을 바라보는 시각" class="sec-title-img">
+							 
+							<div class="para-holder">
+								<p> 2030 밀레니얼들은 한 덩어리로 묶이지 않았습니다. 응답자 안에서도 부모가 물려준 혹은 물려줄 자산이 있는지, 수도권에서 생활하는지,  부동산 투자에 참여했는지 등에 따라 투자 현황과 돈에 대한 가치관 및 인식에 차이가 있었습니다.</p>
+								<p>조건에 따라 밀레니얼이 노동과 재테크, 부동산을 바라보는 시간이 어떻게 다른지를 살펴봤습니다.</p>
+							</div>
+							
+							<div class="quick-test-holder">
+								<p>개발중</p>
+								<p>보여줄 질문, 내용 선정 필요</p>
+	
+							</div>
+						</div>
+
+
+						<!--지면 기사 배너-->
+						<div class="each-sec sec--4 art-banner">
+							<div class="banner-area-back"></div>
+							<div class="banner-area-wrap">
+								<div class="banner-area-title">
+									<div class="title-box">
+										<img src="img/project-title-g.png" class="pro-title-main" alt="2030 자낳세 보고서">
+										<img src="img/project-title-w.png" class="pro-title-sub" alt="경향신문 창간기획">
+									</div>
+								</div>
+								<div class="banner-list">
+									<ul>
+										<p class="publish-info">1회차</p>
+										<li>
+											<a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=202010060600115&code=940100" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--1"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 1</p>
+															<p class="publish-date">2020년 10월 06일</p>
+														</div>
+														<div class="art-title">밀레니얼 개미들이 묻는다<br/>“불로소득, 꼭 나쁜 건가요”</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="http://biz.khan.co.kr/khan_art_view.html?artid=202010060600125&code=920100" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--2"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 2</p>
+															<p class="publish-date">2020년 10월 06일</p>
+														</div>
+														<div class="art-title">5%만 성공한다 해도<br/>노동보다 투자가 “가성비 높다”</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=202010060600011&code=940100" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--3"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 3</p>
+															<p class="publish-date">2020년 10월 06일</p>
+														</div>
+														<div class="art-title">88년생 '돈알못'의 파산 후기<br/> “난 참 바보처럼 살았군요”</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+										<p class="publish-info">2회차</p>
+										<li>
+											<a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=202010130600045&code=940100" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--4"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 4</p>
+															<p class="publish-date">2020년 10월 13일</p>
+														</div>
+														<div class="art-title">계층·소득이 높을수록<br/>“주식·부동산 투자, 부모가 권해요”</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+
+										<li>
+											<a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=202010130600025&code=940100" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--5"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 5</p>
+															<p class="publish-date">2020년 10월 13일</p>
+														</div>
+														<div class="art-title">청년투자자 22%<Br/>“투자에 빚은 필수”</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="http://biz.khan.co.kr/khan_art_view.html?artid=202010130600035&code=920301" target="_blank">
+												<div class="each-banner">
+													<div class="each-banner-bg banner-bg--6"></div>
+													<div class="each-banner-wrap">
+														<div class="art-info">
+															<div class="deco-line"></div>
+															<p class="episode">episode 6</p>
+															<p class="publish-date">2020년 10월 13일</p>
+														</div>
+														<div class="art-title">내 집 마련’과 ‘경제적 자유’ 갈망<br/>여성이 남성보다 ‘적극적’</div>
+														<div class="go-art">
+															<div class="more">기사 보러가기</div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!--//지면 기사 배너-->
+					</div>
+				
+
+
+				</div>
+				<!-- 하단 공통영역 (S) -->
+				<div class="footer-area">
+		
+					<div class="bottom-byline">
+						<ul class="wrap-psrelative">
+							<li class="team">뉴콘텐츠팀</li>
+							<li><a href="http://news.khan.co.kr/reporter_article.html?id=291" target="_blank">최미랑 기자 rang@khan.kr</a></li>
+							<li><a href="http://news.khan.co.kr/reporter_article.html?id=296" target="_blank">박광연 기자 lightyear@khan.kr</a></li>
+							<li><a href="http://news.khan.co.kr/reporter_article.html?id=302" target="_blank">김유진 디지털기자 yjdigital@khan.kr</a></li>
+							<li><a href="http://news.khan.co.kr/reporter_article.html?id=357" target="_blank">심윤지 기자 sharpsim@khan.kr</a></li>
+						</ul>
+					</div>
+	
+
+				</div>
+				<!-- 하단 공통영역 (E) -->
+
+				<!--디지털 콘텐츠 추천 영역 (S) -->
+				<div class="digital-list digital-list-bg digital-list-dark">
+					<div class="digital-list-wrap wrap_mw_800">
+						<h4>디지털 콘텐츠</h4>
+						<div class="list-holder">
+							<ul>
+								<li class="each_item">
+									<a href="http://news.khan.co.kr/kh_storytelling/2018/wonder/index.html" target="_blank">
+										<div class="wrap_psrelative each_item_wrap">
+											<div class="thumb">
+												<img src="http://img.khan.co.kr/spko/storytelling/recothumb/thumb-wonder.jpg" alt="이상한 나라의 학교" />
+											</div>
+											<div class="item_info">
+												<ul class="info">
+													<li>인터랙티브</li>
+													<li class="span_border"></li>
+													<li>#교육 #그림책 #전세계_10개_학교</li>
+												</ul>
+												<p class="item-title">이상한 나라의 학교</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="each_item">
+									<a href="http://news.khan.co.kr/kh_storytelling/2018/noodle" target="_blank">
+										<div class="wrap_psrelative each_item_wrap">
+											<div class="thumb">
+												<img src="http://img.khan.co.kr/spko/storytelling/recothumb/thumb-noodle2.jpg" alt="냉면의취향" />
+											</div>
+											<div class="item_info">
+												<ul class="info">
+													<li>인터랙티브</li>
+													<li class="span_border"></li>
+													<li>#내취향_냉면집_찾기</li>
+												</ul>
+												<p class="item-title">냉면의 취향</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="each_item">
+									<a href="http://news.khan.co.kr/kh_storytelling/2018/ourvote" target="_blank">
+										<div class="wrap_psrelative each_item_wrap">
+											<div class="thumb">
+												<img src="http://img.khan.co.kr/spko/storytelling/recothumb/thumb-ourvote.jpg" alt="우리 동네승자는" />
+											</div>
+											<div class="item_info">
+												<ul class="info">
+													<li>데이터</li>
+													<li class="span_border"></li>
+													<li>#내_지역구_역대승자 #지방선거전도</li>
+												</ul>
+												<p class="item-title">역대 우리동네 승자는?</p>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="each_item">
+									<a href="http://news.khan.co.kr/kh_storytelling/2018/korea" target="_blank">
+										<div class="wrap_psrelative each_item_wrap">
+											<div class="thumb">
+												<img src="http://img.khan.co.kr/spko/storytelling/recothumb/thumb-korea.jpg" alt="남북 70년" />
+											</div>
+											<div class="item_info">
+												<ul class="info">
+													<li>히스토그라피</li>
+													<li class="span_border"></li>
+													<li>#움직이는_역사 #남북정상회담</li>
+												</ul>
+												<p class="item-title">남북 70년, 300여개의 사건들</p>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="digi-more"><a onclick="javascript:go_digital_list();"><p>더 보러 가보실래요?</p></a></div>
+						<script>
+							function go_digital_list(){
+								if($(window).width()<=710){
+									  window.open("http://m.khan.co.kr/list.html?type=storytelling");
+								}else{
+									 window.open("http://news.khan.co.kr/kh_interactive/index.html");
+								}
+							}
+						</script>
+
+					</div>
+				</div>
+				<!--// 디지털 콘텐츠 추천 영역 (E) -->
+
+
+				<!-- commonfooter -->
+				<div class="common-footer">
+					<div id="footer">
+						<div class="foot_info">
+							<h2>
+								<a title="경향닷컴 홈으로 이동" target="_top" href="http://www.khan.co.kr"><img alt="경향신문" src="http://img.khan.co.kr/spko/main_2011/logo_footer.png" width="58" height="59"></a>
+							</h2>
+							<div class="cnt">
+								<dl class="link">
+									<dt class="blind">경향 정책, 약관, 단축메뉴</dt>
+									<dd class="first">
+										<span class="first"><a href="http://www.khan.co.kr/aboutkh" target="_blank">회사소개</a></span>
+										<span><a href=" http://www.khan.co.kr/aboutkh/service_01.html" target="_blank">경향미디어 소개</a></span>
+										<span><a href="http://www.khan.co.kr/aboutkh/business_01.html" target="_blank">경향사업</a></span>
+										<span><a href="http://jebo.khan.co.kr/" target="_blank">기사제보</a></span>
+										<span><a href="http://recruit.khan.co.kr" target="_blank">인재채용</a></span>
+										<span><a href="http://www.khan.co.kr/help/sitemap.html" target="_blank">사이트맵</a></span>
+										<span><a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=200509211710302&amp;code=990403" target="_blank">고충처리</a></span>
+										<span><a href="http://www.khan.co.kr/help/help_main.html" target="_blank">HELP</a></span>
+									</dd>
+									<dd>
+										<span class="first"><a href="http://www.khan.co.kr/help/help_agreement.html" target="_blank">회원약관·정책</a></span>
+										<span><a href="http://www.khan.co.kr/help/help_privately.html" target="_blank"><strong>개인정보처리방침</strong></a></span>
+										<span><a href="http://www.khan.co.kr/help/help_privately2.html" target="_blank">청소년 보호정책 (책임자 : 김희연)</a></span>
+										<span><a href="http://www.khan.co.kr/help/help_digital.html" target="_blank">저작권·콘텐츠 사용</a></span>
+										<span><a href="http://www.khan.co.kr/company/sub02_1.html" target="_blank">온라인 광고안내</a></span>
+										<span><a href="http://www.khan.co.kr/company/sub04_1.html" target="_blank">사업제휴 문의</a></span>
+									</dd>
+								</dl>
+								<p class="adr">
+									<span class="first">서울시 중구 정동길 3 경향신문사</span>
+									<span>인터넷신문등록번호: 서울 아02041</span>
+									<span>등록일자: 2012.03.22</span>
+									<span>발행·편집인 김석종</span>
+									<span class="tel">Tel. 02-3701-1114 </span>
+								</p>
+								<address>Copyright<a href="http://news.khan.co.kr/kh_news/khan_art_view.html?artid=201902251631002&amp;code=610103">ⓒ</a><strong>The Kyunghyang Shinmun</strong>, All rights reserved.</address>
+								<p class="khRss"><a title="경향RSS" target="_blank" href="http://www.khan.co.kr/help/help_rss.html">경향RSS</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- commonfooter -->
+
+
+			</div>
+			<!--// Container (E)-->
+		</div>
+		<!--// After Loading (E)-->
+	</div>
+	<script type="text/javascript" src="<?php echo $js; ?>"></script>
+	<script type="text/javascript" src="<?php echo $investStyleData; ?>"></script>
+
+	<!-- imp 2020.10 YJ 추가-->
+	 <SCRIPT type="text/javaSCRIPT">
+		 document.write('<img src="//ad.khan.co.kr/imp/khan_imp.php?dp=015111" width="0" height="0" style="display: none;" alt="img" />');
+		 document.write('<img src="//ad.khan.co.kr/artCnt/khanArt_cnt.php?artid=202008241556001&code=610103&mode=khan" width="0" height="0" style="display: none;" />');
+	 </SCRIPT>
+	<!--imp -->
+
+  </body>
+</html> 
