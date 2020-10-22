@@ -173,13 +173,13 @@ $(function(){
 		"name": "차트읽는화가형"
 	  },
 	  {
-		"que": "인간은 판단은 믿을 수 없다. 오로지 계량화된 숫자(데이터)를 믿는다.",
+		"que": "인간의 판단은 믿을 수 없다. 오로지 계량화된 숫자(데이터)를 믿는다.",
 		"type": "t5",
 		"qi": "1",
 		"name": "인간불신수학자형"
 	  },
 	  {
-		"que": "다년간의 수익률 등 데이터를 기반으로 ˙백테스팅˙을 거쳐 종목을 선정한다.",
+		"que": "다년간의 수익률 등 데이터를 기반으로 ˙백테스팅˙을 거쳐 종목을 선정한다. <span class='des'>*백테스팅: 자신이 만든 투자전략의 과거 성과가 어땠는지를 확인하는 작업</span>",
 		"type": "t5",
 		"qi": "2",
 		"name": "인간불신수학자형"
@@ -239,7 +239,7 @@ $(function(){
 		"name": "하루살이5%족형"
 	  },
 	  {
-		"que": "박리다매 정신으로 하루의 1프로씩 수익을 내도, 자주 내는 것이 낫다고 생각한다.",
+		"que": "박리다매 정신으로 하루의 1%씩 수익을 내도, 자주 내는 것이 낫다고 생각한다.",
 		"type": "t7",
 		"qi": "4",
 		"name": "하루살이5%족형"
@@ -436,8 +436,6 @@ $(function(){
 	/*								*/
 
 
-
-
 	/*								*/
 	/*------  STEP FUNCTION	 ------*/
 	/*								*/
@@ -594,16 +592,22 @@ $(function(){
 		}
 	}
 
-	function showResult(userType){
+	function showResult(userType, onlyResult){
+		var onlyResult = onlyResult || false;
 		var userTypeNumber = (userType[0].replace("t", ""))*1;
 		var userTypeData = investStyleData[userTypeNumber-1];
 		fillResult(userTypeData);
-		$(".test--afterIntro").fadeOut(1000, function(){
+		sendUserSelectToCount(userTypeData);
+		if(onlyResult==true){
 			$("#INVEST_STYLE_RESULT").show();
 			printResultArea();
+		}else{
+			$(".test--afterIntro").fadeOut(1000, function(){
+				$("#INVEST_STYLE_RESULT").show();
+				printResultArea();
+			});
+		}
 		
-		});
-	
 	}
 
 	function printResultArea(){
@@ -612,6 +616,7 @@ $(function(){
 		$("html, body").animate({scrollTop: movePos}, 800, "easeInOutCubic", function(){
 			$(".type-name").removeClass("type-name-zoom");
             Slider.setSlider();
+			$("#TEST_PAGE_SPLIT_VER .art-banner").show();
 			$(".all-type-list").css({"opacity":"1"});
 		});
 	}
@@ -673,13 +678,17 @@ $(function(){
 		var userTypeData = investStyleData[userSelectInvestType-1];
 		$(".user-result-select").hide();
 		fillResult(userTypeData);
+		sendUserSelectToCount(userTypeData);
 		printResultArea();
 	});
 
 
+
+
 	$(".link-copy-btn").on("click", function(e){ // 링크 복사
 		e.preventDefault();
-		var url = "http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobal + "&fbrefresh=NOT_SEEN_BEFORE"
+		var userTypeGlobalN =userTypeGlobal.replace("t", "");
+		var url = "http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobalN + "&fbrefresh=NOT_SEEN_BEFORE"
 
 		var tempElem = document.createElement('textarea');
 		tempElem.value = url;
@@ -696,7 +705,6 @@ $(function(){
 	/*------  STEP FUNCTION	 ------*/
 	/*								*/
 
-	
 
 
 	/*								*/
@@ -907,7 +915,7 @@ $(function(){
 
 		svgBody.attr("width", width)
 			.attr("height", height)
-			.attr("transform", "translate("+ ( (isMobile==true)? 40 : 0) +", 0)");
+			//.attr("transform", "translate("+ ( (isMobile==true)? 40 : 0) +", 0)");
 
 		var poleHolder = svgBody.append("g")
 			.attr("class", "pole-graph");
@@ -1051,24 +1059,45 @@ $(function(){
 
 	function init(){
 		 //drawD3chart();
+		 routingResultPage();
 	}
+
+
+	function get_query(){
+		var url = document.location.href;
+		var qs = url.substring(url.indexOf("?") + 1).split("&");
+		for(var i = 0, result = {}; i < qs.length; i++){
+			qs[i] = qs[i].split("=");
+			result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+		}
+		return result;
+	}
+
+	function checkURLQuery(){
+		var urlQuery = get_query();
+		var type_number = urlQuery["type"]
+		//var type_number = <?php echo  $_GET['type']; ?>;
+		//console.log(type_number);
+		return type_number;
+	}
+
+	function checkResultPage(){
+		//console.log($("body").hasClass("only-result"));
+		return $("body").hasClass("only-result");
+	}
+	
+	function routingResultPage(){
+		if(checkResultPage() == true){
+			var userType = new Array;
+			 userType.push("t"+checkURLQuery());
+			console.log(userType);
+			showResult(userType, true);
+		}	
+	};
 
 	$(".loading-page").fadeOut(200, function(){
 		init();
 	});
-
-	/***  PIE CHART ANIMATION ***/
-
-	/*
-	function pieChartAnimating(){
-		arc.transition()
-			.duration(500)
-			.delay(function(d,i){return i*200})
-			.style("opacity","1");
-	};*/
-	
-	/***  PIE CHART ANIMATION ***/
-	var pieChartAniDone = false;
 
 	var record = {};
 	//ajax 데이터 수신
@@ -1078,11 +1107,47 @@ $(function(){
 		type: "POST",
 		success: function() {
 			$.getJSON("dataload.php", function(data) {		  						
-				console.log(data);
+				//console.log(data);
+				addCountDataToCard(data);
 			});
 		}
     });
 	//ajax 데이터 수신
+
+	function addCountDataToCard(data){
+		$(".all-type-list .slider-item").each(function(i){
+			var typeName = 	$(this).find(".slider-type-name").html();
+			if(typeName =="하루살이5%족형"){
+				$(this).find(".select-count .value").html(data["하루살이5족형"]+"회");
+			}else{
+				$(this).find(".select-count .value").html(data[typeName]+"회");
+			}	
+		});
+	}
+	
+	function sendUserSelectToCount(data){
+		var typeName = data.name;
+		investStyleData.forEach(function(v, i, a) { 
+			if(a[i].name==typeName){
+				record[a[i].name] = 1;
+			}else {
+				record[a[i].name] = 0;
+			}				
+		});
+		console.log(record);
+		record.password = "ok!"
+		$.ajax({
+			url: "dataload.php",
+			data: record,
+			type: "POST",
+			success: function() {
+				$.getJSON("dataload.php", function(data) {
+					addCountDataToCard(data);
+				});
+			}
+		});
+	}
+
 
 
 	$(window).scroll(function(){
@@ -1102,14 +1167,16 @@ $(function(){
 	// 결과 공유하기
    $(".share-type-fb").on("click", function(e){
 	    e.preventDefault();
-		var url = encodeURIComponent("http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobal + "&fbrefresh=NOT_SEEN_BEFORE");
+		var userTypeGlobalN =userTypeGlobal.replace("t", "");
+		var url = encodeURIComponent("http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobalN );
 		window.open('http://www.facebook.com/sharer/sharer.php?u=' + url);
 		return false;
     });
 
    $(".share-type-tw").on("click", function(e){
 		e.preventDefault();
-		var url = encodeURIComponent("http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobal + "&fbrefresh=NOT_SEEN_BEFORE");
+		var userTypeGlobalN =userTypeGlobal.replace("t", "");
+		var url = encodeURIComponent("http://news.khan.co.kr/kh_storytelling/2020/2030-invest-report/result.html?type=" + userTypeGlobalN);
 		window.open('http://twitter.com/intent/tweet?url=' + url);
 		return false;
     });
